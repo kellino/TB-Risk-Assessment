@@ -1,0 +1,33 @@
+{
+    "data": [{
+        "id": "bcg vaccinated",
+        "text": "Consider interferon-gamma testing for people whose Mantoux testing shows positive results, or in people for whom Mantoux testing may be less reliable, for example BCG-vaccinated people. [new 2011]"
+    }, {
+        "id": "inconclusive",
+        "text": "If Mantoux testing is inconclusive, refer the person to a TB specialist. [new 2011]"
+    }, {
+        "id": "immunocompromised",
+        "text": "People with HIV who are in close contact with people with sputum-smear-positive respiratory TB should have active disease excluded and then be given treatment for latent TB infection (see recommendations 1.1.1.10–1.1.1.13). [2006, amended 2011]"
+    }, {
+        "id": "high-incidence",
+        "text": "Offer a Mantoux test to children aged 5–15 years. If positive, follow with an interferon-gamma test. [new 2011] Offer either an interferon-gamma test alone or a dual strategy in people aged 16–35 years. For people aged 35 years or older, consider the individual risks and benefits of likely subsequent treatment, before offering testing. (Refer to other sections for other groups, for example, immunocompromised.) [new 2011] Offer Mantoux testing as the initial diagnostic test for latent TB infection in children younger than 5 years who have recently arrived from a high-incidence country. If the initial test is positive (taking into account the BCG history): refer to a TB specialist to exclude active disease and consider treating latent TB. [new 2011]"
+    }, {
+        "id": "young-age (without BCG)",
+        "text": "Children older than 4 weeks but younger than 2 years who have not had BCG vaccination and are in close contact with people with sputum-smear-positive TB should be treated as follows. The child should be started on isoniazid (according to the current 'British national formulary for children') and a Mantoux test performed If the Mantoux test is positive (6 mm or greater), the child should be assessed for active TB (see section 1.1.2). If active TB is ruled out, full treatment for latent TB infection should be given (see recommendation 1.6.1.8). If the Mantoux test is negative (less than 6 mm), then isoniazid should be continued for 6 weeks, and then a repeat Mantoux test together with an interferon-gamma test should be carried out. If the repeat tests are negative, isoniazid may be stopped and BCG vaccination performed (see section 1.7). If either repeat test is positive (6 mm or greater), then the child should be assessed for active TB (see section 1.1.2) and consider treating for latent TB. [2006, amended 2011]"
+    }, {
+        "id": "young-age (with BCG)",
+        "text": "BCG-vaccinated children older than 4 weeks but younger than 2 years, in close contact with people with sputum-smear-positive respiratory TB, should be treated as follows. The child should have a Mantoux test. If this is positive (15 mm or greater), the child should be assessed for active TB (see section 1.1.2). If active TB is excluded, then treatment for latent TB infection should be given (see recommendation 1.6.1.8). If the result of the test is as expected for prior BCG (less than 15 mm), it should be repeated after 6 weeks together with an interferon-gamma test. If the repeat Mantoux test is also less than 15 mm, and the interferon-gamma test is also negative, no further action is needed. If the repeat Mantoux test becomes more strongly positive (15 mm or greater and an increase of 5 mm or more over the previous test), or the interferon-gamma test is positive the child should be assessed for active TB (see section 1.1.2). If active TB is excluded, treatment for latent TB infection should be given. [2006, amended 2011]"
+    }, {
+        "id": "young-age (general)",
+        "text": "For children requiring treatment for latent TB infection, a regimen of either 3 months of rifampicin and isoniazid (3RH) or 6 months of isoniazid (6H) should be planned and started, unless the child is known to be HIV positive, when 6H should be given (see recommendation 1.6.1.4). [2006]"
+    }, {
+        "id": "neonates",
+        "text": "Neonates who have been in close contact with people with sputum-smear-positive TB who have not received at least 2 weeks' anti-tuberculosis drug treatment should be treated as follows. The baby should be started on isoniazid (according to the current 'British national formulary for children') for 3 months and then a Mantoux test performed after 3 months' treatment. If the Mantoux test is positive (6 mm or greater) the baby should be assessed for active TB (see section 1.1.2). If this assessment is negative, then isoniazid should be continued for a total of 6 months. If the Mantoux test is negative (less than 6 mm), it should be repeated together with an interferon-gamma test. If both are negative then isoniazid should be stopped and a BCG vaccination performed (see section 1.7). [2006, amended 2011]"
+    }, {
+        "id": "strongly-positive",
+        "text": "Treatment for latent TB infection should not be started in close contacts of people with sputum-smear-positive MDR TB who are strongly Mantoux positive (15 mm or greater), as no regimen is of proven benefit, and only a small proportion of people infected will develop the disease. Long-term monitoring should be undertaken for active disease. [2006]"
+    }, {
+        "id": "treatment",
+        "text": "People who have agreed to receive treatment for latent TB infection should be started on one of the following regimens: either 6 months of isoniazid (6H) or 3 months of rifampicin and isoniazid (3RH) for people aged 16–35 not known to have HIV either 6 months of isoniazid (6H) or 3 months of rifampicin and isoniazid (3RH) for people older than 35 in whom treatment for latent TB infection is recommended (see recommendation 1.6.1.1), and who are not known to have HIV 6 months of isoniazid (6H) for people of any age who have HIV 6 months of rifampicin (6R) for contacts, aged 35 or younger, of people with isoniazid-resistant TB. People eligible for treatment of latent TB infection, but who decline to take this treatment, should be given 'Inform and advise' information about TB and have chest X-rays 3 and 12 months later. [2006]"
+    }]
+}

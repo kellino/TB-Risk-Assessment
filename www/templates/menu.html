@@ -1,0 +1,47 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-positive custom-dark">
+            <ion-nav-title class="text-center"><b>TB Risk Assessment</b></ion-nav-title>
+            <ion-nav-buttons side="right">
+                <div class="padding-right">
+                    <a ng-href="#/app/settings">
+                        <button class="button button-icon button-clear ion-ios-gear"></button>
+                    </a>
+                </div>
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left" class="menu-left">
+        <ion-header-bar class="bar-positive custom-dark">
+            <h1 class="title"><font color=#524545>Main Menu</font></h1>
+        </ion-header-bar>
+        <ion-content class="has-custom-header">
+            <ion-list>
+                <ion-item menu-close href="#/app/about">
+                    About
+                </ion-item>
+                <ion-item menu-close href="#/app/disclaimer">
+                    Disclaimer
+                </ion-item>
+                <ion-item menu-close href="#/app/status">
+                    New Patient
+                </ion-item>
+                <ion-item menu-close href="#/app/feedback">
+                    Feedback
+                </ion-item>
+                <ion-item menu-close href="#/app/docs">
+                    Documentation
+                </ion-item>
+                <ion-item menu-close href="#/app/help">
+                    Help
+                </ion-item>
+                <ion-item menu-close href="#/app/nice">
+                    NICE
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

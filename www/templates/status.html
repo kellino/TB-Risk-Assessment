@@ -1,0 +1,119 @@
+<!-- status view, the first view of a new patient -->
+<body>
+    <ion-pane>
+        <ion-content scroll="true" class="has-header has-footer">
+            <section class="home-container">
+                <!-- tst test result select -->
+                <div class="row icon-row">
+                    <div class="col text-center">
+                        <div class="custom-title"><b>TST RESULT*</b></div>
+                        <label id="rounded" class="item item-select custom-select" ng-class="tst.tstSelect==='empty'? 'error' : 'normal'">
+                            <select name="tstSelect" ng-model="tst.tstSelect" ng-change="storeValue('tst', tst.tstSelect)">
+                                <option ng-repeat="option in tst.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <!-- igra result select -->
+                <div class="row icon-row">
+                    <div class="col text-center">
+                        <div class="custom-title "><b>IGRA RESULT*</b></div>
+                        <label id="rounded" class="item item-select custom-select" ng-class="igra.igraSelect==='empty' ? 'error' : 'normal'">
+                            <select name="igraSelect" ng-model="igra.igraSelect" ng-change="storeValue('igra', igra.igraSelect)">
+                                <option ng-repeat="option in igra.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <!-- country of birth select. Dynamically loads state select -->
+                <div class="row icon-row">
+                    <div class="col text-center">
+                        <div class="custom-title "><b>COUNTRY OF BIRTH*</b></div>
+                        <label id="rounded" class="item item-select custom-select" ng-class="countryOfBirth.countryOfBirthSelect==='empty' ? 'error' : 'normal'">
+                            <select name="countryOfBirthSelect" ng-model="countryOfBirth.countryOfBirthSelect" ng-change="storeValue('COB',
+                                countryOfBirth.countryOfBirthSelect); loadStates()">
+                                <option ng-repeat="option in countryOfBirth.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <!-- state select, if born in USA, India, Brazil, otherwise hide -->
+                <!-- without the custom css in style.css, ng-if only works by default in the
+                browser, but not on a device -->
+                <div class="row icon-row" ng-if="hasState">
+                    <div class="col text-center">
+                        <div class="custom-title "><b>STATE / PROVINCE</b></div>
+                        <label id="rounded" class="item item-select custom-select" ng-class="states.stateSelect==='empty' ? 'error' : 'normal'">
+                            <select name="stateSelect" ng-model="states.stateSelect" ng-change="storeValue('states', states.stateSelect)">
+                                <option ng-repeat="option in states.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="row icon-row">
+                    <!-- age select -->
+                    <div class="col text-center">
+                        <div class="custom-title "><b>AGE*</b></div>
+                        <label id="rounded" class="item item-select custom-select" ng-class="age.ageSelect==='empty' ? 'error' : 'normal'">
+                            <select name="ageSelect" ng-model="age.ageSelect" ng-change="storeValue('age', age.ageSelect)">
+                                <option ng-repeat="option in age.availableOptions " value="{{option.id}}">{{option.name}}</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="row icon-row">
+                    <!-- age at immigration select -->
+                    <div class="col text-center">
+                        <div class="custom-title "><b>AGE AT IMMIGRATION (if applicable)</b></div>
+                        <label id="rounded" class="item item-select custom-select normal" ng-class="ageIm.ageImSelect==='old' ? 'error' : 'normal'">
+                            <select name="ageImSelect" ng-model="ageIm.ageImSelect" ng-change="storeValue('ageIm', ageIm.ageImSelect); hasImmigrated()">
+                                <option ng-repeat="option in ageIm.availableOptions " value="{{option.id}}">{{option.name}}</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <!-- selector for race/ethnicty. Obligatory field -->
+                <!-- without the custom css in style.css, ng-if only works by default in the
+                browser, but not on a device -->
+                <div class="row icon-row animate-if" ng-if="immigrated">
+                    <div class="col text-center">
+                        <div class="custom-title "><b>RACE/ETHNICITY*</b></div>
+                        <label id="rounded" class="item item-select custom-select normal">
+                            <select name="ageImSelect" ng-model="race.raceSelect" ng-change="storeValue('race', race.raceSelect)">
+                                <option ng-repeat="option in race.availableOptions " value="{{option.id}}">{{option.name}}</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="row icon-row">
+                    <div class="col text-center">
+                        <div class="custom-title "><b>BCG STATUS*</b></div>
+                        <label id="rounded" class="item item-select custom-select" ng-class="bcg.bcgSelect==='empty' ? 'error' : 'normal'">
+                            <select name="bcgSelect" ng-model="bcg.bcgSelect" ng-change="storeValue('bcg', bcg.bcgSelect)">
+                                <option ng-repeat="option in bcg.availableOptions" value="{{option.id}}">{{option.name}}</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="row icon-row">
+                    <div class="col text-center">
+                        <div class="custom-title"><b>RECENT CONTACT*</b></div>
+                        <label id="rounded" class="item item-select custom-select" ng-class="recentContact.recentContactSelect==='empty' ? 'error' : 'normal'">
+                            <select name="recentContactSelect" ng-model="recentContact.recentContactSelect" ng-change="storeValue('rc', recentContact.recentContactSelect)">
+                                <option ng-repeat="option in recentContact.availableOptions " value="{{option.id}}">{{option.name}}</option>}}
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </ion-content>
+        <ion-footer-bar align-title="center" class="custom-dark">
+            <button class="button button-clear" ng-click="resetFields()">
+                <h3><font color=white>RESET</font></h3></button>
+            <h1 class="title"></h1>
+            <button class="button button-clear" ng-click="clickRight()">
+                <h2><font color=#524545><i class="custom-icon ion-chevron-right "></i></font></h2>
+            </button>
+        </ion-footer-bar>
+    </ion-pane>
+</body>
