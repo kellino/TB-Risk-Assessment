@@ -16,12 +16,16 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
         '../www/lib/ionic/js/ionic.bundle.js',
+        '../www/lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js',
         '../www/lib/angular-mocks/angular-mocks.js',
         '../www/lib/angular-sanitize/angular-sanitize.js',
         '../www/lib/angular-animate/angular-animate.js',
         '../www/lib/angular-ui-router/release/angular-ui-router.js',
         '../www/lib/angular-ui-router/src/*.js',
-        '../www/js/**/*.js',
+        '../www/js/*.js',
+        '../www/js/controllers/*.js',
+        '../www/js/factories/*.js',
+        '../www/js/app.js',
         'unit-tests/*.js'
     ],
 
