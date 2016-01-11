@@ -21,7 +21,7 @@ module.exports = function(config) {
         '../www/lib/angular-animate/angular-animate.js',
         '../www/lib/angular-ui-router/release/angular-ui-router.js',
         '../www/lib/angular-ui-router/src/*.js',
-        '../www/js/*.js',
+        '../www/js/**/*.js',
         'unit-tests/*.js'
     ],
 

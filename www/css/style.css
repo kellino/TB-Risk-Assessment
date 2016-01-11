@@ -9,14 +9,14 @@
 }
 
 .header {
-    -webkit-flex: 0.3 !important;
+    -webkit-flex: 0.3!important;
     -webkit-align-items: center;
 }
 
 .footer {
     */ -webkit-flex: 0.3 !important;
     -webkit-align-items: center;
-    bottom: 50px*/
+    bottom: 50px
 }
 
 .custom-dark {

@@ -1,4 +1,4 @@
-var starter = angular.module('starter', ['ionic','ionic.service.core', 'ionic.service.analytics', /*'starter.controllers', */'starter.factories', 'chart.js', 'ngCordova']);
+var starter = angular.module('starter', ['ionic', 'ionic.service.core', 'ionic.service.analytics', 'chart.js', 'ngCordova']);
 
 starter.run(function($ionicPlatform, $ionicAnalytics) {
     $ionicPlatform.ready(function() {
