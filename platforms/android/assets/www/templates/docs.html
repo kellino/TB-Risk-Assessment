@@ -1,0 +1,38 @@
+<ion-pane>
+    <ion-content scroll="true" class="has-header has-footer">
+        <section class="home-container">
+            <div class="col text-center">
+                <h1><font color=#524545><b>DOCUMENTATION</b></font></h1>
+                <h4><font color=#524545>Details of calculations</font></h4>
+                <h5><font color=#524545>The following calculation details are largely derived from
+                        www.tstin3d.com</font></h5>
+                <b><font color=#524545>Positive Predictive Value (PPV)</font></b>
+                <p>The positive predictive value of the TST (PPVTST) is the patient’s probability of having true latent TB infection. This is determined by the likelihood of TB infection (pLTBI) and the probability of a false positive TST test (FP-TSTBCG + FP-TSTNTM)</p>
+                <p>ppvtst formula</p>
+                <div>
+                    <p>e = the relative risk of a positive TST test based on the patient’s ethnic status, but only if the patient is Canadian or US-born. If the patient is not US-born, then e = 1. If the patient is US-born and White/Caucasian, then e = 1. If the patient is US-born and Non-Hispanic Black/African-American, then e = 3.09. If the patient is US-born and Hispanic, then e = 3.66. If the patient is US-born and not classified by any of the previously mentioned races/ethnicities, then e = 1. If patient is Canadian born and non-aboriginal then e = 1. If the patient is Canadian-born and aboriginal then e = 1.55.</p>
+                    <p>pLTBI is based on the patient’s age, the patient’s contact status (c), and the annual risk of infection (ARI) in the country. Based on Styblo’s formula, the ARI is calculated as the incidence of smear-positive pulmonary TB per 100 000 population divided by 49. The country’s incidence of smear-positive TB in 2007 was taken from WHO report 2009: Global tuberculosis control - epidemiology, strategy, financing (http://www.who.int/tb/publications/global_report/2009/en/index.html).
+                    </p>
+                    <p>If the person tested is not a recent contact, then c = 0; if the person tested is a recent casual contact, then c = 8%; if the person tested is a recent close contact, then c = 40%.</p>
+                    <p>The probability of a false positive TST depends on the patient’s BCG-vaccination status (FP-TSTBCG) and the country’s prevalence of non-tuberculous mycobacteria (NTM) infections (FP-TSTNTM). If the patient is not BCG-vaccinated, then FP-TSTBCG = 0 If the patient was BCG-vaccinated before 2 years of age and had a TST of size… 5-9 mm, then FP-TSTBCG = 4.2% 10-14 mm, then FP-TSTBCG = 5.3% 15+ mm, then FP-TSTBCG = 2.8% If the patient was BCG-vaccinated at 2 years of age or greater and had a TST of size… 5-9 mm, then FP-TSTBCG= 25.8% 10-14 mm, then FP-TSTBCG = 8.7% 15+ mm, then FP-TSTBCG = 7.8% FP-TSTNTM varies depending on the patient’s TST size and the patient’s country’s climate, which was determined using the Koppen-Geiger climate classification map, (http://koeppen-geiger.vu-wien.ac.at).
+                    </p>
+                    <h5><font color=#524545><b>Assumptions on IGRA test results</b></font></h5>
+                    <p>If IGRA is not done or if IGRA is negative, then PPV = PPVTST (IGRA is ignored). If IGRA is negative and TST is not done, then PPV = 0. If IGRA is positive and TST is not done, then PPV = PPVIGRA = 0.98. If IGRA is positive and TST is done, then PPV = 1- ((1-PPVTST) x (1-PPVIGRA))
+                    </p>
+                    <h5><font color=#524545><b>Annual Risk of Disease(ARD) ARD = PPV</b></font></h5>
+                    <p>x [baseline annual risk of TB] x [RR for specific risk factors].</p>
+                    <p>Baseline annual risk of TB = 0.1% in healthy persons with normal CXR and no other risk factors. This was taken from a large cohort of healthy TST-positive US military recruits followed up for 4 years (Comstock et al). If the patient is a recent close contact, then the baseline risk of TB is 5% for the first two years and the baseline annual risk of TB is 0.1% for the years after. Close contact is defined as someone living in the same household, or a non-household member who regularly (more than 4 hours per week) has contact with the index case; and is being seen at the time of recent close contact, i.e. as part of a contact investigation, but not if the person has had close contact in the remote past. If the patient was recently infected, then the relative risk increases by 15 folds for the first two years, but not for the years after.
+                    </p>
+                    <h5><font color=#524545><b>Cumulative Risk of Disease</b></font></h5>
+                    <p>The cumulative risk of disease (CRD) is the product of the annual ARD and the number of years before the patient reaches the age of 80.</p>
+                    <h5><font color=#524545>Risk of Drug-Induced Hepatitis</font></h5>
+                    <p>Estimates of occurrence of INH hepatitis are based on receiving INH for at least 6 months. These estimates come from 3 studies listed in the references. Risk of INH hepatitis will increase if there is concomitant viral hepatitis or other liver disease, or with alcohol consumption, particular with daily consumption. Estimates of drug induced hepatitis not available for other LTBI treatment regimens</p>
+                </div>
+            </div>
+        </section>
+    </ion-content>
+    <ion-footer-bar align-title="center" class="custom-dark">
+        <button class="button button-clear" ng-click="goBack()">
+            <h3><font color=white>GO BACK</font></h3></button>
+    </ion-footer-bar>
+</ion-pane>

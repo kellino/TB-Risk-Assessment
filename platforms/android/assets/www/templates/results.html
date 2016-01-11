@@ -1,0 +1,49 @@
+<ion-pane>
+    <ion-content scroll="true" class="has-header" ng-init="getData()">
+        <section class="home-container">
+            <div class="col text-center">
+                <h1><font color=#524545><b>RESULTS</b></font></h1>
+            </div>
+            <div class="col text-center">
+                <p>The probabilty this test result has true <b>Positive Predictive Value</b> is
+                    <label for="results"><b>{{ppvResult}}</b>%.</label>
+                </p>
+            </div>
+            <!-- don't show this if the patient is younger than 18 -->
+            <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels"></canvas>
+            <div class="row icon-row animate-if" ng-if="tooYoung">
+                <div class="col text-center">
+                    <p>The annual risk of developing active TB is approximately
+                        <label for="results"><b>{{ardResult}}</b>%.</label>
+                    </p>
+                </div>
+            </div>
+            <!-- don't show this if the patient is younger than 18 -->
+            <div class="row icon-row animate-if" ng-if="tooYoung">
+                <div class="col text-center">
+                    <p>The cumulative risk of developing active TB (up to the age of 80) is
+                        <label for="results"><b>{{cumulResult}}</b>%.</label>
+                    </p>
+                </div>
+            </div>
+            <!-- section: Nice Guidelines, a collections of buttons opening modal views -->
+            <div class="col text-center">
+                <h4><font color=#524545>NICE Recommendations</font></h4>
+            </div>
+            <div class="col text-center list">
+                <button id="rounded" class="button custom-select normal" ng-repeat="item in
+                    niceList" ng-model="item.name" ng-click="sendDataToModal(item); modal.show()">{{item.name}}</button>
+            </div>
+        </section>
+    </ion-content>
+    <!-- footer -->
+    <ion-footer-bar align-title="center" class="custom-dark">
+        <button class="button button-clear" ng-click="clickLeft()">
+            <h2><font color=#524545><i class="custom-icon ion-chevron-left"></i></font></h2>
+        </button>
+        <h1 class="title"></h1>
+        <button class="button button-clear" ng-click="resetPatient()">
+            <h3><font color=#524545>New Patient</font></h3>
+        </button>
+    </ion-footer-bar>
+</ion-pane>

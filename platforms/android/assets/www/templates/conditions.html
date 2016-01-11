@@ -1,0 +1,20 @@
+<ion-pane>
+    <ion-content scroll="true" class="has-header" ng-init="loadList()">
+        <section class="home-container">
+            <div class="list">
+                <ion-checkbox id="rounded" class="custom-select normal" ng-repeat="item in condList" ng-model="item.checked" ng-checked="item.checked">{{item.text}}
+                </ion-checkbox>
+            </div>
+        </section>
+    </ion-content>
+
+    <ion-footer-bar align-title="center" class="custom-dark">
+        <button class="button button-clear" ng-click="clickLeft()">
+            <h2><font color=#524545><i class="custom-icon ion-chevron-left"></i></font></h2>
+        </button>
+        <h1 class="title"></h1>
+        <button class="button button-clear" ng-click="clickRight()">
+            <h2><font color=#524545><i class="custom-icon ion-chevron-right"></i></font></h2>
+        </button>
+    </ion-footer-bar>
+</ion-pane>
