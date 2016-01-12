@@ -120,16 +120,6 @@ starter.config(function($stateProvider, $urlRouterProvider) {
         }
     })
 
-    .state('app.nice', {
-        url: '/nice',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/nice.html',
-                controller: 'NiceCtrl'
-            }
-        }
-    })
-
     .state('app.about', {
         url: '/about',
         views: {

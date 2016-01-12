@@ -18,5 +18,4 @@ describe("Controller Unit Tests", function() {
     it('should have a scope defined', function() {
         expect(scope).toBeDefined();
     });
-
 });

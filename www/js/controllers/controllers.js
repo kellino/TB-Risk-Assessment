@@ -103,13 +103,6 @@ starter.controller("HelpCtrl", function($scope, $state, Navigator) {
     };
 });
 
-/**
- * loads an array of buttons onto the screen, which in turn call a modal view with the details
- */
-starter.controller("NiceCtrl", function($scope, $state) {
-    $scope.niceListComplete = [];
-});
-
 /** 
  * provided functionality for sending an email regarding the performance of the app. It needs a
  * configured email client to be present on the user's device 
