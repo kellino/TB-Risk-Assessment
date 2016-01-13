@@ -38,7 +38,6 @@ ion-scroll[direction=y] {
 .scroll-content {
     background: url("../img/logo.png") no-repeat center;
     background-size: cover;
-    /*overflow: visible !important; */
 }
 
 /*.item-select select {*/
