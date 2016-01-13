@@ -1,7 +1,6 @@
 .home-container {
     display: -webkit-flex;
     -webkit-flex-direction: column;
-    /* height: 70vh */
 }
 
 .home-container > .row {
@@ -14,7 +13,7 @@
 }
 
 .footer {
-    */ -webkit-flex: 0.3 !important;
+    -webkit-flex: 0.3 !important;
     -webkit-align-items: center;
     bottom: 50px
 }
@@ -32,11 +31,21 @@
     color: #524545
 }
 
+ion-scroll[direction=y] {
+    height: 100vh
+}
+
 .scroll-content {
     background: url("../img/logo.png") no-repeat center;
     background-size: cover;
-    overflow: visible !important;
+    /*overflow: visible !important; */
 }
+
+/*.item-select select {*/
+    /*right: auto;*/
+    /*padding: 13px 15px 15px;*/
+    /*direction: ltr;*/
+/*}*/
 
 button#rounded {
     border-radius: 30px;

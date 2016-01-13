@@ -3,13 +3,22 @@
 
 import sys
 
-fileString = str(sys.argv[1:])
+fileString = str(sys.argv[1])
+
+variables = []
+
+def storeLine(line):
+    variables.append(line)
 
 f = None
 try:
     f= open(fileString, 'r')
-    for i, line in enumerate(f):
-        print("reading line {}".format(i))
+    for line in enumerate(f):
+        print(line)
+        if line.strip().startswith('$scope'):
+            storeLine(line)
+
+    print(len(variables))
 except:
     print("error")
 finally:

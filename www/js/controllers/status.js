@@ -36,10 +36,10 @@ starter.controller('StatusCtrl', function($scope, $state, $ionicPopup, Navigator
             name: 'Test not done'
         }, {
             id: 2,
-            name: "5-9 mm"
+            name: "5-9mm"
         }, {
             id: 3,
-            name: '10-14 mm'
+            name: '10-14mm'
         }, {
             id: 4,
             name: '15mm+'
