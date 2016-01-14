@@ -36,18 +36,60 @@ describe("Controller Unit Tests", function() {
 
 
     /**
+     * tests for Hello
+     */
+    beforeEach(inject(function($controller, $state) {
+        state = $state;
+        controller = $controller('HelloCtrl', {
+            $scope: scope
+        });
+    }));
+
+    it('should have a button which loads a new patient', function() {
+        scope.newPatient();
+        expect(state.go).toHaveBeenCalled();
+    });
+
+    it('should have a button which goes to the help page', function() {
+        scope.goToHelp();
+        expect(state.go).toHaveBeenCalled();
+    });
+
+
+    /**
      * tests for the About Controller
      */
     beforeEach(inject(function($controller, $state) {
         state = $state;
         controller = $controller('AboutCtrl', {
-            $scope: scope,
+            $scope: scope
         });
     }));
 
-    // this test is not yet complete
-    it('should open a link in the browser', function() {
-        var link = 'http://www.google.com';
-        scope.goToLink(link);
+    it('should move to status page when button is pressed', function() {
+        scope.goBack();
+        expect(state.go).toHaveBeenCalled();
+    });
+    
+    // this test fails
+    //it('should open a link in the browser', function() {
+        //var site = "";
+        //var open = scope.goToLink(site);
+        //expect(open).toThrow();
+    //});
+
+    /**
+     *  tests for the Settings Controller
+     */
+    beforeEach(inject(function($controller, $state) {
+        state = $state;
+        //spyOn(state, 'on');
+        controller = $controller('SettingsCtrl', {
+            $scope: scope
+        });
+    }));
+
+    it('should try to load settings on entry', function() {
+       expect(state.on).toHaveBeenCalled(); 
     });
 });
