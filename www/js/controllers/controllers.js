@@ -31,7 +31,7 @@ starter.controller('AppCtrl', function($scope, $state, SettingsFactory, Navigato
  * Controller for About view
  */
 starter.controller("AboutCtrl", function($scope, $state, $ionicPopup, Navigator) {
-    // opens link in system browers
+    // opens link in system brower
     $scope.goToLink = function(link) {
         try {
             window.open(link, '_system');
@@ -107,7 +107,11 @@ starter.controller("HelpCtrl", function($scope, $state, Navigator) {
  * provided functionality for sending an email regarding the performance of the app. It needs a
  * configured email client to be present on the user's device 
  */
-starter.controller("FeedbackCtrl", function($scope, $cordovaCamera, $cordovaFile) {
+starter.controller("FeedbackCtrl", function($scope, $cordovaCamera, $cordovaFile, Navigator) {
+    $scope.newPatient = function() {
+        Navigator.changeState('app.status');
+    };
+
     $scope.sendFeedback = function() {
         if (window.plugins && window.plugins.emailComposer) {
             window.plugins.emailComposer.showEmailComposerWithCallback(function(
