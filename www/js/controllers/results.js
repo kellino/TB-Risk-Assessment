@@ -134,7 +134,7 @@ starter.controller("ResultsCtrl", function($scope, $state, $filter, SettingsFact
     $scope.condDetails = "";
 
     $scope.sendDataToModal = function(item) {
-        $scope.condTitle = item.name;
+        $scope.condTitle = "<b>" + item.name + "</b>";
         $scope.condDetails = item.text;
     };
 

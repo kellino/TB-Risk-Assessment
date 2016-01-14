@@ -54,7 +54,7 @@ starter.factory('Navigator', function($state, $ionicPopup) {
     };
 });
 
-starter.factory('NiceFactory', function($http, $ionicPopup) {
+starter.factory('NiceFactory', function($http) {
     return {
         loadNiceData: function() {
             return $http({

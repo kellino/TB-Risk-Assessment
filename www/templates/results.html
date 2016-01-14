@@ -31,8 +31,7 @@
                 <h4><font color=#524545>NICE Recommendations</font></h4>
             </div>
             <div class="col text-center list">
-                <button id="rounded" class="button custom-select normal" ng-repeat="item in
-                    niceList" ng-model="item.name" ng-click="sendDataToModal(item); modal.show()">{{item.name}}</button>
+                <a id="rounded" class="item custom-select normal" ng-repeat="item in niceList" ng-model="item.name" ng-click="sendDataToModal(item); modal.show()">{{item.name}}</a>
             </div>
         </section>
     </ion-content>
@@ -43,7 +42,7 @@
         </button>
         <h1 class="title"></h1>
         <button class="button button-clear" ng-click="resetPatient()">
-            <h3><font color=white>New Patient</font></h3>
+            <h3><font color=white>NEW PATIENT</font></h3>
         </button>
     </ion-footer-bar>
 </ion-pane>
