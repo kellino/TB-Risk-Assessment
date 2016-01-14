@@ -2067,169 +2067,169 @@ window.chinaState = [{
 ]; //cfb
 
 window.brazilState = [{
-    id: 354,
+    id: 1,
     small: 7.6,
     med: 2,
     smear: 26,
     name: "Unknown"
 }, {
-    id: 355,
+    id: 2,
     small: 8,
     med: 2,
     smear: 26,
     name: "Acre"
 }, {
-    id: 356,
+    id: 3,
     small: 8,
     med: 2,
     smear: 26,
     name: "Alagoas"
 }, {
-    id: 357,
+    id: 4,
     small: 8,
     med: 2,
     smear: 26,
     name: "Amapá"
 }, {
-    id: 358,
+    id: 5,
     small: 8,
     med: 2,
     smear: 26,
     name: "Amazonas"
 }, {
-    id: 359,
+    id: 6,
     small: 8,
     med: 2,
     smear: 26,
     name: "Bahia"
 }, {
-    id: 360,
+    id: 7,
     small: 8,
     med: 2,
     smear: 26,
     name: "Ceará"
 }, {
-    id: 361,
+    id: 8,
     small: 8,
     med: 2,
     smear: 26,
     name: "Distrito Federal"
 }, {
-    id: 362,
+    id: 9,
     small: 8,
     med: 2,
     smear: 26,
     name: "Espírito Santo"
 }, {
-    id: 363,
+    id: 10,
     small: 8,
     med: 2,
     smear: 26,
     name: "Goiás"
 }, {
-    id: 364,
+    id: 11,
     small: 8,
     med: 2,
     smear: 26,
     name: "Maranhão"
 }, {
-    id: 365,
+    id: 12,
     small: 8,
     med: 2,
     smear: 26,
     name: "Mato Grosso"
 }, {
-    id: 366,
+    id: 13,
     small: 8,
     med: 2,
     smear: 26,
     name: "Mato Grosso do Sul"
 }, {
-    id: 367,
+    id: 14,
     small: 8,
     med: 2,
     smear: 26,
     name: "Minas Gerais"
 }, {
-    id: 368,
+    id: 15,
     small: 8,
     med: 2,
     smear: 26,
     name: "Pará"
 }, {
-    id: 369,
+    id: 16,
     small: 8,
     med: 2,
     smear: 26,
     name: "Paraíba"
 }, {
-    id: 370,
+    id: 17,
     small: 5.9,
     med: 1.5,
     smear: 26,
     name: "Paraná"
 }, {
-    id: 371,
+    id: 18,
     small: 8,
     med: 2,
     smear: 26,
     name: "Pernambuco"
 }, {
-    id: 372,
+    id: 19,
     small: 8,
     med: 2,
     smear: 26,
     name: "Piauí"
 }, {
-    id: 373,
+    id: 20,
     small: 5.9,
     med: 1.5,
     smear: 26,
     name: "Rio de Janeiro"
 }, {
-    id: 374,
+    id: 21,
     small: 8,
     med: 2,
     smear: 26,
     name: "Rio Grande do Norte"
 }, {
-    id: 375,
+    id: 22,
     small: 5.9,
     med: 1.5,
     smear: 26,
     name: "Rio Grande do Sul"
 }, {
-    id: 376,
+    id: 23,
     small: 8,
     med: 2,
     smear: 26,
     name: "Rondônia"
 }, {
-    id: 377,
+    id: 24,
     small: 8,
     med: 2,
     smear: 26,
     name: "Roraima"
 }, {
-    id: 378,
+    id: 25,
     small: 5.9,
     med: 1.5,
     smear: 26,
     name: "Santa Catarina"
 }, {
-    id: 379,
+    id: 26,
     small: 5.9,
     med: 1.5,
     smear: 26,
     name: "Sâo Paulo"
 }, {
-    id: 380,
+    id: 27,
     small: 8,
     med: 2,
     smear: 26,
     name: "Sergipe"
 }, {
-    id: 381,
+    id: 28,
     small: 8,
     med: 2,
     smear: 26,
