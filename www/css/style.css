@@ -40,12 +40,6 @@ ion-scroll[direction=y] {
     background-size: cover;
 }
 
-/*.item-select select {*/
-    /*right: auto;*/
-    /*padding: 13px 15px 15px;*/
-    /*direction: ltr;*/
-/*}*/
-
 button#rounded {
     border-radius: 30px;
 }
