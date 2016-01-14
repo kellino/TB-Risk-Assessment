@@ -6,18 +6,19 @@
             </div>
             <div class="col text-center">
                 <p>Please give us your feedback about the app</p>
-            <div class="col text-center">
-                <button id="rounded" class="button custom-select normal" ng-click="sendFeedback()">
-                    <b>Send us some feedback</b>
-                </button>
             </div>
-            <div>
-                <button id="rounded" class="button custom-select normal" ng-click="getPhoto()">
-                    <b>Take a photo</b>
-                </button>
+            <div class="col text-center">
+                <a id="rounded" class="item custom-select normal" ng-click="sendFeedback()">
+                    <font color=#524545><b>Send us some feedback</b></font>
+                </a>
+                <a id="rounded" class="item custom-select normal" ng-click="getPhoto()">
+                    <font color=#524545><b>Take a photo</b></font>
+                </a>
             </div>
         </section>
     </ion-content>
     <ion-footer-bar align-title="center" class="custom-dark">
+        <button class="button button-clear" ng-click="newPatient()">
+            <h3><font color=white>START</font></h3></button>
     </ion-footer-bar>
 </ion-pane>
