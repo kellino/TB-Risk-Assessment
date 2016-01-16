@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: controllers/status.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: controllers/status.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>starter.controller('StatusCtrl', function($scope, $state, $ionicPopup, Navigator) {
+    /** 
+     * reset fields on entry to the view 
+     */
+    $scope.$on("ionicView.enter", function() {
+        $scope.resetFields();
+    });
+
+    /* resets all the dropdown menus to empty */
+    $scope.resetFields = function() {
+        try {
+            $scope.tst.tstSelect = null;
+            $scope.igra.igraSelect = null;
+            $scope.countryOfBirth.countryOfBirthSelect = null;
+            $scope.states.stateSelect = null;
+            $scope.age.ageSelect = null;
+            $scope.ageIm.ageImSelect = null;
+            $scope.race.raceSelect = null;
+            $scope.bcg.bcgSelect = null;
+            $scope.recentContact.recentContactSelect = null;
+            $scope.hasState = false;
+            $scope.immigrated = false;
+        } catch (err) {
+            $ionicPopup.alert({
+                title: "Error",
+                template: "Unable to reset form"
+            });
+        }
+    };
+
+    // data for status dropdown menus
+    $scope.tst = {
+        tstSelect: null,
+        availableOptions: [{
+            id: 1,
+            name: 'Test not done'
+        }, {
+            id: 2,
+            name: "5-9mm"
+        }, {
+            id: 3,
+            name: '10-14mm'
+        }, {
+            id: 4,
+            name: '15mm+'
+        }]
+    };
+
+    $scope.igra = {
+        igraSelect: null,
+        availableOptions: [{
+            id: 1,
+            name: 'Test not done'
+        }, {
+            id: 2,
+            name: 'Negative'
+        }, {
+            id: 3,
+            name: 'Positive'
+        }]
+    };
+
+    // loads the select with country / state data from data.js
+    $scope.regionLoader = function($list, $array) {
+        for (var i = 0; i &lt; $list.length; i++) {
+            var newState = {};
+            newState.id = $list[i].id;
+            newState.name = $list[i].name;
+            $array.push(newState);
+        }
+    };
+
+    var COB = []; // array containing countries of birth
+    $scope.regionLoader(countries, COB);
+    $scope.countryOfBirth = {
+        countryOfBirthSelect: null,
+        availableOptions: COB
+    };
+
+    $scope.hasState = false;
+    var states = []; // array containing states/provinces
+
+    /**
+     * loads a list of states / provinces into the select box only if it is one of the following
+     * countries: USA, China, India, Brazil, Argentina, Australia
+     */
+    $scope.loadStates = function() {
+        states.length = 0;
+        if (window.sessionStorage.COB === "204") { // USA
+            $scope.hasState = true;
+            $scope.regionLoader(usaState, states);
+        } else if (window.sessionStorage.COB === "43") { // China
+            $scope.hasState = true;
+            $scope.regionLoader(chinaState, states);
+        } else if (window.sessionStorage.COB === "88") { // India
+            $scope.hasState = true;
+            $scope.regionLoader(indiaState, states);
+        } else if (window.sessionStorage.COB === "26") { // Brazil
+            $scope.hasState = true;
+            $scope.regionLoader(brazilState, states);
+        } else if (window.sessionStorage.COB === "8") { // Argentina
+            $scope.hasState = true;
+            $scope.regionLoader(argentinaState, states);
+        } else if (window.sessionStorage.COB === "10") { // Australia
+            $scope.hasState = true;
+            $scope.regionLoader(aussieState, states);
+        } else {
+            $scope.hasState = false;
+            var nState = {};
+            nState.id = window.sessionStorage.COB;
+            nState.name = "N/A";
+            states.push(nState);
+        }
+    };
+
+    // state select
+    $scope.states = {
+        stateSelect: null,
+        availableOptions: states
+    };
+
+    // 80 is a fairly arbitrary cutoff point for maximum age
+    var ages = [];
+    for (i = 0; i &lt; 80; i++) {
+        var newAge = {};
+        newAge.id = i + 1;
+        newAge.name = i + 1; // we don't want 0 as an age
+        ages.push(newAge);
+    }
+
+    // age select
+    $scope.age = {
+        ageSelect: null,
+        availableOptions: ages
+    };
+
+    // age at immigration select
+    $scope.ageIm = {
+        ageImSelect: null,
+        availableOptions: ages
+    };
+
+    $scope.immigrated = false;
+    $scope.hasImmigrated = function() {
+        if ($scope.ageIm !== null) {
+            $scope.immigrated = true;
+        }
+    };
+
+    // race/ethnicity select
+    $scope.race = {
+        raceSelect: null,
+        availableOptions: [{
+            id: 1,
+            name: "White/Caucasian"
+        }, {
+            id: 2,
+            name: "Black/African American"
+        }, {
+            id: 3,
+            name: "Hispanic"
+        }, {
+            id: 4,
+            name: "Other"
+        }]
+    };
+
+    // vaccination select (bcg)
+    $scope.bcg = {
+        bcgSelect: null,
+        availableOptions: [{
+            id: 1,
+            name: 'Never vaccinated / unknown'
+        }, {
+            id: 2,
+            name: 'Vaccinated &lt; 2 years'
+        }, {
+            id: 3,
+            name: 'Vaccinated ≥ 2 years'
+        }]
+    };
+
+    // recent contact with a TB sufferer select
+    $scope.recentContact = {
+        recentContactSelect: null,
+        availableOptions: [{
+            id: 1,
+            name: 'No contact'
+        }, {
+            id: 2,
+            name: 'Close contact'
+        }, {
+            id: 3,
+            name: 'Casual contact'
+        }]
+    };
+
+    /**
+     * stores the selected value in local storage for use in the algorithm
+     * @param {$field}
+     * @param {$selection}
+     */
+    $scope.storeValue = function($field, $selection) {
+        try {
+            window.sessionStorage[$field] = $selection;
+        } catch (err) {
+            $ionicPopup.alert({
+                title: "Error",
+                template: "Could not find enough memory to store data"
+            });
+        }
+    };
+
+    /**
+     * checks that all the fields are completed. It has the "hidden" side-effect of
+     * setting null values to the string "empty" or "old" which is used in the html template for
+     * highlighting, in red, incomplete areas
+     *
+     * @return {boolean}
+     */
+    $scope.checkValues = function() {
+        var errorPresent = false;
+
+        if ($scope.tst.tstSelect === null) {
+            $scope.tst.tstSelect = 'empty';
+            errorPresent = true;
+        } else if ($scope.tst.tstSelect === 'empty') {
+            errorPresent = true;
+        }
+        if ($scope.igra.igraSelect === null) {
+            $scope.igra.igraSelect = 'empty';
+            errorPresent = true;
+        } else if ($scope.igra.igraSelect === 'empty') {
+            errorPresent = true;
+        }
+        if ($scope.countryOfBirth.countryOfBirthSelect === null) {
+            $scope.countryOfBirth.countryOfBirthSelect = 'empty';
+            errorPresent = true;
+        } else if ($scope.countryOfBirth.countryOfBirthSelect === 'empty') {
+            errorPresent = true;
+        }
+        if ($scope.age.ageSelect === null) {
+            $scope.age.ageSelect = 'empty';
+            errorPresent = true;
+        } else if ($scope.age.ageSelect === 'empty') {
+            errorPresent = true;
+        }
+        if ($scope.bcg.bcgSelect === null) {
+            $scope.bcg.bcgSelect = 'empty';
+            errorPresent = true;
+        } else if ($scope.bcg.bcgSelect === 'empty') {
+            errorPresent = true;
+        }
+        if ($scope.recentContact.recentContactSelect === null) {
+            $scope.recentContact.recentContactSelect = 'empty';
+            errorPresent = true;
+        } else if ($scope.recentContact.recentContactSelect === 'empty') {
+            errorPresent = true;
+        }
+        // if neither field is empty/null but immigration age is greater than age, there must be a
+        // problem
+        if (($scope.ageIm.ageImSelect !== null &amp;&amp; $scope.age.ageSelect !== null) &amp;&amp;
+            (parseInt($scope.ageIm.ageImSelect) > parseInt($scope.age.ageSelect))) {
+            $scope.ageIm.ageImSelect = 'old';
+            $scope.age.ageSelect = 'empty';
+            errorPresent = true;
+        }
+
+        return errorPresent;
+    };
+
+    /** if the fields are complete and without errors, navigates to next screen, otherwise sends a warning */
+    $scope.clickRight = function() {
+        if ($scope.checkValues() === true) {
+            $ionicPopup.alert({
+                title: "Incorrect Form",
+                template: "Form contains errors"
+            });
+        } else if ((window.sessionStorage.tst === "1") &amp;&amp; (window.sessionStorage.igra ===
+                "1")) {
+            $ionicPopup.alert({
+                title: "Incorrect Form",
+                template: "No tests performed"
+            });
+        } else {
+            Navigator.changeState("app.conditions");
+            $scope.resetFields();
+        }
+    };
+});
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.1</a> on Sat Jan 16 2016 22:27:44 GMT+0000 (GMT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
