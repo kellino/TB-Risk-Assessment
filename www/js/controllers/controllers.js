@@ -40,7 +40,6 @@ starter.controller("AboutCtrl", function($scope, $state, $ionicPopup, Navigator)
         }
     };
 
-
     $scope.goBack = function() {
         Navigator.changeState('app.status');
     };
