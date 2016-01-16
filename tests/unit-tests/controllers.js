@@ -81,15 +81,14 @@ describe("Controller Unit Tests", function() {
     /**
      *  tests for the Settings Controller
      */
-    beforeEach(inject(function($controller, $state) {
-        state = $state;
-        //spyOn(state, 'on');
+    beforeEach(inject(function($controller) {
         controller = $controller('SettingsCtrl', {
-            $scope: scope
+            $scope: scope,
         });
+        //spyOn(scope, 'loadNiceData');
     }));
 
     it('should try to load settings on entry', function() {
-       expect(state.on).toHaveBeenCalled(); 
+       expect(scope.loadNiceData).toHaveBeenCalled(); 
     });
 });
