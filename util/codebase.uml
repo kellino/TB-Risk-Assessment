@@ -1,0 +1,77 @@
+@startuml
+package controllers {
+object Controllers {
+$scope.getPhoto 
+$scope.goBack 
+$scope.goToHelp 
+$scope.goToLink 
+$scope.images 
+$scope.loadFirstScreen 
+$scope.newPatient 
+$scope.onShowClick 
+$scope.sendFeedback 
+$scope.settings 
+var name 
+var newName 
+var options 
+var possible 
+var text 
+}
+object Condititions {
+$scope.ard 
+$scope.ardAfter2 
+$scope.calculateARD 
+$scope.calculateARI 
+$scope.calculateEthnicity 
+$scope.calculatePPV 
+$scope.clickLeft 
+$scope.clickRight 
+$scope.condList 
+$scope.contactStatus 
+$scope.countryOrState 
+$scope.falsePosBCG 
+$scope.falsePosByCountry 
+$scope.igraResult 
+$scope.loadList 
+$scope.resetList 
+$scope.sumRiskFactors 
+sessionStorage.a
+sessionStorage.b
+sessionStorage.c
+sessionStorage.C
+sessionStorage.i
+sessionStorage.P
+sessionStorage.r
+sessionStorage.s
+sessionStorage.t
+var a 
+var conditionTotal 
+var contact 
+var countryStats 
+var e 
+var igra 
+var n 
+var pLTBI 
+var ppv 
+var ppvigra 
+var ppvtst 
+var r 
+var s 
+var tstStatus 
+var v 
+}
+object Results
+object Status
+}
+
+package factories {
+object Factories
+}
+
+package Data {
+object Country_Data
+object Nice
+}
+
+
+@enduml

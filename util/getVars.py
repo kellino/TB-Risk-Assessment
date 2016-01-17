@@ -16,8 +16,8 @@ def storeLine(variable):
 f = None
 scope = re.compile("\$scope\.[^()\t\n,\[\]\. ]+ ")
 var_list = re.compile("var [a-zA-Z0-9]+ ")
-session = re.compile("sessionStorage\.[^()\t\n,\[\]\. ]")
-local = re.compile("localStorage\.[^()\t\n,\[\]\. ]")
+session = re.compile("sessionStorage\.[^()\t\n,\[\]\. ]+ ")
+local = re.compile("localStorage\.[^()\t\n,\[\]\. ]+ ")
 try:
     f= open(fileString, 'r')
     for line in f:
