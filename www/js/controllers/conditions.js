@@ -57,7 +57,7 @@ starter.controller('ConditionsCtrl', function($scope, $state, $ionicPopup, Navig
      * checkboxes
      */
     $scope.sumRiskFactors = function() {
-        if ($scope.condList.lenght !== 0) {
+        if ($scope.condList.length !== 0) {
             for (var i = 0; i < $scope.condList.length; i++) {
                 if ($scope.condList[i].checked === true) {
                     window.sessionStorage.selectedList += JSON.stringify($scope.condList[
