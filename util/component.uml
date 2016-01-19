@@ -1,0 +1,34 @@
+@startuml
+
+skinparam componentStyle uml2
+title Component Diagram\n
+
+package "Calculator Group" {
+    [Data Validator]
+    [Data Storage Component]
+    [Result Calculator]
+}
+
+package "NICE Group" {
+    [Data Validator]
+    [NICE Parser]
+}
+
+package "Analytics" {
+    [Ionic Analytics Component]
+    [Webserver]
+}
+
+
+() "App UI" --> [Data Validator]
+[Data Validator] ..> [Data Storage Component]
+[Data Storage Component] ..> [Result Calculator]
+[Result Calculator] ..> () "App UI"
+
+[Data Storage Component] ..> [NICE Parser]
+[NICE Parser] --> () "App UI"
+
+() "App UI" --> [Ionic Analytics Component]
+[Ionic Analytics Component] ..> [Webserver]
+
+@enduml

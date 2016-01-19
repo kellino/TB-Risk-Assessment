@@ -1,0 +1,171 @@
+@startuml
+
+title Class diagram
+
+controllers +-- factories
+controllers +-- SessionStorage
+controllers <|- Data
+
+package controllers {
+    object Controllers {
+        $scope.getPhoto() 
+        $scope.goBack() 
+        $scope.goToHelp() 
+        $scope.goToLink ()
+        $scope.loadFirstScreen ()
+        $scope.newPatient()
+        $scope.onShowClick()
+        $scope.sendFeedback()
+        ..
+        $scope.settings 
+        $scope.images 
+        ==
+        var name 
+        var newName 
+        var options 
+        var possible 
+        var text 
+    }
+
+    object Condititions {
+        $scope.calculateARD() 
+        $scope.calculateARI() 
+        $scope.calculateEthnicity() 
+        $scope.calculatePPV() 
+        $scope.clickLeft() 
+        $scope.clickRight() 
+        $scope.countryOrState() 
+        $scope.falsePosBCG() 
+        $scope.falsePosByCountry() 
+        $scope.igraResult()
+        $scope.loadList()
+        $scope.resetList()
+        $scope.sumRiskFactors() 
+        ..
+        $scope.contactStatus 
+        $scope.condList 
+        $scope.ard 
+        $scope.ardAfter2 
+        ==
+        var a 
+        var conditionTotal 
+        var contact 
+        var countryStats 
+        var e 
+        var igra 
+        var n 
+        var pLTBI 
+        var ppv 
+        var ppvigra 
+        var ppvtst 
+        var r 
+        var s 
+        var tstStatus 
+        var v 
+    }
+
+    object Results {
+        $scope.checkOldEnough()
+        $scope.extractText()
+        $scope.getData() 
+        $scope.modal() 
+        $scope.niceGuidelines() 
+        $scope.ob_by_id() 
+        $scope.resetPatient() 
+        $scope.sendDataToModal() 
+        $scope.showResults() 
+        $scope.tooYoung() 
+        ..
+        $scope.ardResult 
+        $scope.condDetails 
+        $scope.condTitle 
+        $scope.cumulResult 
+        $scope.data 
+        $scope.labels 
+        $scope.nice 
+        $scope.niceData 
+        $scope.niceList 
+        $scope.ppvResult 
+        $scope.string 
+        ==
+        var bodyText 
+        var newElem 
+        var temp 
+        var titleString 
+    }
+
+    object Status {
+        $scope.checkValues() 
+        $scope.clickRight() 
+        $scope.countryOfBirth()
+        $scope.hasImmigrated() 
+        $scope.hasState() 
+        $scope.loadStates() 
+        $scope.regionLoader() 
+        $scope.resetFields() 
+        $scope.storeValue() 
+        $scope.tst 
+        ..
+        $scope.age 
+        $scope.ageIm 
+        $scope.bcg 
+        $scope.igra 
+        $scope.immigrated 
+        $scope.race 
+        $scope.recentContact 
+        $scope.states 
+        ==
+        var ages 
+        var COB 
+        var errorPresent 
+        var newAge 
+        var newState 
+        var nState 
+        var states 
+    }
+}
+
+package factories {
+    object Factories {
+        get()
+        set()
+        getShowHello()
+        changeState()
+        loadNiceData()
+    }
+}
+
+package SessionStorage {
+    object SessionStorage {
+        sessionStorage.ard 
+        sessionStorage.ardAfter2 
+        sessionStorage.bcg 
+        sessionStorage.COB 
+        sessionStorage.condRisk 
+        sessionStorage.igra 
+        sessionStorage.PPVglobal 
+        sessionStorage.race 
+        sessionStorage.selectedList 
+        sessionStorage.states 
+        sessionStorage.tst
+    }
+}
+
+package Data {
+    object Country_Data {
+        countries
+        usaState
+        indiaState
+        chinaState
+        brazilState
+        argentinaState
+        aussieState
+    }
+    object Nice {
+        nice_array
+    }
+        
+}
+
+
+@enduml
