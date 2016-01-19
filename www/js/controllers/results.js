@@ -55,7 +55,6 @@ starter.controller("ResultsCtrl", function($scope, $state, $filter, SettingsFact
     $scope.string = "";
 
     $scope.niceGuidelines = function() {
-        console.log("selected list is " + window.sessionStorage.selectedList);
         $scope.ob_by_id = $filter('filter')($scope.niceData.data, {
             id: "treatment"
         });
@@ -123,7 +122,6 @@ starter.controller("ResultsCtrl", function($scope, $state, $filter, SettingsFact
         newElem.text = bodyText;
 
         $scope.niceList.push(newElem);
-        console.log(newElem);
     };
 
     /**

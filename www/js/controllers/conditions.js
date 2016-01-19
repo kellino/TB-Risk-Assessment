@@ -70,8 +70,6 @@ starter.controller('ConditionsCtrl', function($scope, $state, $ionicPopup, Navig
     };
 
     $scope.countryOrState = function() {
-        console.log("country info is " + window.sessionStorage.COB);
-        console.log("states info is " + window.sessionStorage.states);
         var countryStats;
         switch (window.sessionStorage.COB) {
             case "8":
@@ -115,14 +113,12 @@ starter.controller('ConditionsCtrl', function($scope, $state, $ionicPopup, Navig
         } else {
             rate = 0;
         }
-        console.log("false pos rate is " + rate);
         return rate;
     };
 
     /** calculates PPV based on igra test */
     $scope.igraResult = function() {
         var positive;
-        console.log("window.sessionStorage.igra = " + window.sessionStorage.igra);
         // igra positive
         if (window.sessionStorage.igra === "3") {
             positive = true;
@@ -181,7 +177,8 @@ starter.controller('ConditionsCtrl', function($scope, $state, $ionicPopup, Navig
     };
 
     $scope.calculateARI = function(contact, a, s) {
-        /* Styblo's formula, incidence of smear-positive pulmonary TB per 100,000
+        /**
+         * Styblo's formula, incidence of smear-positive pulmonary TB per 100,000
          * divided by 49
          */
         var pLTBI;
@@ -190,8 +187,6 @@ starter.controller('ConditionsCtrl', function($scope, $state, $ionicPopup, Navig
         } else {
             pLTBI = 1 - Math.pow((1 - contact * 1) * (1 - (s / 4900)), a);
         }
-        console.log('contact = ' + contact + ' age = ' + a + ' smear = ' + s +
-            ' pLTBI = ' + pLTBI);
         return pLTBI;
     };
 
@@ -223,10 +218,8 @@ starter.controller('ConditionsCtrl', function($scope, $state, $ionicPopup, Navig
          * n is the rate of false positives in the country of birth 
          */
         var n = $scope.falsePosByCountry(countryStats);
-        console.log("Country is " + countryStats.name);
 
         var igra = $scope.igraResult();
-        console.log("igra result is " + igra);
 
         /* smear positive rate */
         var s = 0;
@@ -249,38 +242,30 @@ starter.controller('ConditionsCtrl', function($scope, $state, $ionicPopup, Navig
 
         /* bcg status */
         var v = $scope.falsePosBCG(n);
-        console.log("bcg status " + v);
 
         //var conditionTotal = window.sessionStorage.condRisk;
 
         var pLTBI = $scope.calculateARI(contact, a, s);
 
         var e = $scope.calculateEthnicity();
-        console.log("ethnicity calc " + e);
 
         var ppvigra = 0.98; // 2% risk of false positive from igra
         var ppvtst = (e * 1) * ((pLTBI) / (pLTBI + (n * 1 / 100) + (v * 1)));
-        console.log("ppvtst = " + e + " * " + pLTBI + " / " + pLTBI + " + " + (n /
-            100) + " + " + v);
         var ppv = 0;
 
         // if igra negative/not done, and tst not done
         var tstStatus = parseFloat(window.sessionStorage.tst);
         if ((igra === false) && (tstStatus === 1)) {
             ppv = 0;
-            console.log("ppv = ppvtst, igra = " + igra + " tst = " + tstStatus);
             // if igra is positive and tst not done
         } else if ((igra === true) && (tstStatus === 1)) {
             ppv = ppvigra; // 0.98
-            console.log("ppv = ppvtst, igra = " + igra + " tst = " + tstStatus);
             // if igra is positive and tst is done
         } else if ((igra === true) && (tstStatus > 1)) {
             ppv = 1 - ((1 - ppvtst) * (1 - ppvigra));
-            console.log("ppv = ppvtst, igra = " + igra + " n = " + n);
             // if igra is negative and tst is done
         } else {
             ppv = ppvtst;
-            console.log("ppv = ppvtst, igra = " + igra + " n = " + n);
         }
 
         if (ppv > 1) {
@@ -301,7 +286,6 @@ starter.controller('ConditionsCtrl', function($scope, $state, $ionicPopup, Navig
             conditionRiskTotal = 1;
         } else {
             conditionRiskTotal = parseInt(window.sessionStorage.condRisk);
-            console.log("condition risk total = " + conditionRiskTotal);
         }
 
         // close contact
@@ -341,8 +325,5 @@ starter.controller('ConditionsCtrl', function($scope, $state, $ionicPopup, Navig
         } else if (isNaN($scope.ardAfter2)) {
             window.sessionStorage.ardAfter2 = 0.0;
         } else window.sessionStorage.ardAfter2 = $scope.ardAfter2.toFixed(2);
-
-        console.log("annual risk of disease for first 2 years " + window.sessionStorage
-            .ard + " and after 2 years " + window.sessionStorage.ardAfter2);
     };
 });
