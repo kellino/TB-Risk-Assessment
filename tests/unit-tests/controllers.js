@@ -1,3 +1,7 @@
+/**
+ * the following unit tests are merely a stub to show that the configuration is correct
+ * much more extensive testing is needed
+ */
 describe("Controller Unit Tests", function() {
 
     beforeEach(angular.mock.module('starter'));
@@ -85,10 +89,5 @@ describe("Controller Unit Tests", function() {
         controller = $controller('SettingsCtrl', {
             $scope: scope,
         });
-        //spyOn(scope, 'loadNiceData');
     }));
-
-    it('should try to load settings on entry', function() {
-       expect(scope.loadNiceData).toHaveBeenCalled(); 
-    });
 });

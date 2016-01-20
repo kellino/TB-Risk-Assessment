@@ -7,10 +7,22 @@
         "files": {}
     },
     "installed_plugins": {
+        "com.jcjee.plugins.emailcomposer": {
+            "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
+        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
         },
         "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
+        },
+        "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
         },
         "cordova-plugin-splashscreen": {
@@ -23,18 +35,6 @@
             "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
-        },
-        "com.jcjee.plugins.emailcomposer": {
-            "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
-        },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
-        },
-        "cordova-plugin-file": {
             "PACKAGE_NAME": "com.ionicframework.tbriskassessment681425"
         }
     },
